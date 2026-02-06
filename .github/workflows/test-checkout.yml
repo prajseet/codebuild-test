@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test:
-    runs-on: codebuild-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-test-check-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Check Node version
         run: |
