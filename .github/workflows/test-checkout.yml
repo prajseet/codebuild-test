@@ -1,0 +1,15 @@
+name: Test Checkout Action
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: codebuild-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check Node version
+        run: |
+          node --version
+          ldd --version
+      
+      - name: Checkout code
+        uses: actions/checkout@v4
