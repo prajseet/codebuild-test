@@ -1,15 +1,8 @@
-name: Test Checkout Action
-
+name: Hello World
 on: [push]
-
 jobs:
-  test:
-    runs-on: codebuild-test-check-${{ github.run_id }}-${{ github.run_attempt }}
+  Hello-World-Job:
+    runs-on:
+      - codebuild-myProject-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      - name: Check Node version
-        run: |
-          node --version
-          ldd --version
-      
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - run: echo "Hello World!"
